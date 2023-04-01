@@ -18,13 +18,26 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    band_id: DataTypes.INTEGER,
-    meet_start_time: DataTypes.DATE,
-    meet_end_time: DataTypes.DATE,
-    meet_greet_id: DataTypes.INTEGER
+    band_id: {
+      type: DataTypes.INTEGER,
+    },
+    meet_start_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    meet_end_time: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    meet_greet_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
   }, {
     sequelize,
     modelName: 'MeetGreet',
+    tableName: 'meet_greets',
+    timestamps: false
   });
   return MeetGreet;
 };

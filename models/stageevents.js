@@ -23,10 +23,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false
     },
-    event_id: DataTypes.INTEGER
+    event_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    }
   }, {
     sequelize,
     modelName: 'StageEvents',
+    tableName: 'stage_events',
+    timestamps: false
   });
   return StageEvents;
 };
